@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    height: 100vh;
+    border: 2px solid black;
+}
+
+.left-container {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid red;
+
+    /* Organiza as divs filhas verticalmente */
+}
+
+.top-div {
+    flex-grow: 1;
+    border: 2px solid green;
+    /* Preenche todo o espaço disponivel */
+}
+
+.main-left-div {
+    height: 80%;
+    border: 2px solid pink;
+
+    /* Ocupa 80% da altura do seu conteiner pai */
+}
+
+.right-div {
+    width: 30%;
+    max-height: 100vh;
+    border: 2px solid royalblue;
+
+}
