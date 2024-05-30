@@ -4,11 +4,13 @@ import { AngularMaterialModule } from "../angular-material/angular-material.modu
 import { FormsModule } from "@angular/forms";
 import { UserDetailsComponent } from "./user-details/user-details.component";
 import { UserFilterComponent } from "./user-filter/user-filter.component";
+import { UsersListComponent } from './users-list/users-list.component';
 
 @NgModule({
     declarations: [
         UserDetailsComponent,
-        UserFilterComponent
+        UserFilterComponent,
+        UsersListComponent,
     ],
     imports: [
         AngularMaterialModule,
@@ -16,7 +18,8 @@ import { UserFilterComponent } from "./user-filter/user-filter.component";
     ],
     exports: [
         UserDetailsComponent,
-        UserFilterComponent
+        UserFilterComponent,
+        UsersListComponent
     ],
 })
 export class ComponentsModule { }
