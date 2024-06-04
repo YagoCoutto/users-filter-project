@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { UsersList } from '../../data/users-list';
 import { IUser } from '../../interfaces/user/user.interface';
 
@@ -11,7 +11,11 @@ export class UsersListComponent {
   displayedColumns: string[] = ['name', 'date', 'status'];
   dataSource: IUser[] = UsersList;
 
-  userSelected(item:IUser) {
-    console.log(item)
+  @Output('userSelected') userSelectedEmitt = new EventEmitter<IUser>();
+
+  userSelected(user:IUser) {
+    console.log(user)
+
+    this.userSelectedEmitt.emit(user);
   }
 }
