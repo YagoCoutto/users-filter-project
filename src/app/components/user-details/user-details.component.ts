@@ -10,6 +10,4 @@ import { IUser } from '../../interfaces/user/user.interface';
 export class UserDetailsComponent {
   @Input({ required: true }) user: IUser = {} as IUser
 
-  
-
 }

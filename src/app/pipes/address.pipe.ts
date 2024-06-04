@@ -7,8 +7,18 @@ import { IAddress } from '../interfaces/user/adress.interface';
 export class AddressPipe implements PipeTransform {
 
   transform(address:IAddress): string {
-    const ADDRESS_FORMATAD = address.rua
-    return ADDRESS_FORMATAD
+    const INVALID_ADDRESS = 
+    !address ||
+    !address.rua ||
+    !address.cidade ||
+    !address.estado ||
+    !address.numero === null || address.numero === undefined;
+
+    if(INVALID_ADDRESS){
+      return 'Endereço indisponível ou inválido';
+    }
+
+    return `${address.rua}, ${address.numero} - ${address.cidade}, ${address.pais}`
   }
 
 }

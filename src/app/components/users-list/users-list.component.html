@@ -13,13 +13,13 @@
         <!-- Name Column -->
         <ng-container matColumnDef="date">
             <th mat-header-cell *matHeaderCellDef> Data de Cadastro </th>
-            <td mat-cell *matCellDef="let element" class="list__item" (click)="userSelected(element)"> {{element.dataCadastro}} </td>
+            <td mat-cell *matCellDef="let element" class="list__item" (click)="userSelected(element)"> {{element.dataCadastro | date:'dd/MM/yyyy'}} </td>
         </ng-container>
 
         <!-- Weight Column -->
         <ng-container matColumnDef="status">
             <th mat-header-cell *matHeaderCellDef> Status </th>
-            <td mat-cell *matCellDef="let element" class="list__item" (click)="userSelected(element)"> {{element.ativo}} </td>
+            <td mat-cell *matCellDef="let element" class="list__item" (click)="userSelected(element)"> {{element.ativo | status}} </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
