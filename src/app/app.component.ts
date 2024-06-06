@@ -12,6 +12,8 @@ export class AppComponent {
 
   showUserDetails: boolean = false;
 
+  
+
   onUserSelected(user:IUser){
     this.userSelected = user
     this.showUserDetails = true
