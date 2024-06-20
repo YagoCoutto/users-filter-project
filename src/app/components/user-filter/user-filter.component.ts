@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { IFilterOptions } from '../../interfaces/user/filter.options.interface';
 
 @Component({
   selector: 'app-user-filter',
@@ -7,8 +8,29 @@ import { Component } from '@angular/core';
 })
 
 export class UserFilterComponent {
-  foods = [
-    {value: 'ativo-0', viewValue: 'ativo'},
-    {value: 'inativo-1', viewValue: 'Inativo'},
-  ]
+  filterOptions: IFilterOptions = {
+    name: undefined,
+    startDate: undefined,
+    endDate: undefined,
+    status: undefined,
+  }
+
+  statusList = [
+    { description: 'Ativo', value: true },
+    { description: 'Inativo', value: false },
+
+  ];
+
+  @Output('onFilter') onFilterEmitt = new EventEmitter<IFilterOptions>();
+
+  onFilter(){
+    this.onFilterEmitt.emit(this.filterOptions)
+  }
+
+
+  dateSelected(date: any) {
+    console.log(date)
+  };
+
+
 }
